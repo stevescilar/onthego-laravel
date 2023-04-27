@@ -5,7 +5,7 @@
 </template>
   
 <script setup>
-import ProductDesc from '@/Components/ProductDesc.vue';
+import ProductDesc from '@/Components/ProductDesc.vue'
 defineProps({
   product: Object,
 })

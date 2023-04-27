@@ -1,16 +1,26 @@
 <template>
   <Link href="/">OntheGo</Link>&nbsp;
+  <Link :href="route('product.index')">Products</Link>&nbsp;
+  <Link :href="route('product.create')">New Product</Link>&nbsp;
   <Link href="/about">About</Link>&nbsp;
-  <!-- <Link href="/products">Product</Link> -->
 
-  <!-- <div>Time Spent onsite {{ timer }}</div> -->
+  <div v-if="flashSuccess" class="success">
+    {{ flashSuccess }}
+  </div>
   <slot>Default</slot>
 </template>
 <script setup>
-import { Link } from '@inertiajs/vue3'
-// import { ref } from 'vue'
+import { computed } from 'vue'
+import { Link, usePage } from '@inertiajs/vue3'
 
-// const timer = ref(0)
-// setInterval(() => timer.value++, 1000)
+// from the handleinertiarequests middleware we use the data here
+const flashSuccess =  computed(
+  () => usePage().props.flash.success,
+)
 </script>
-
+<style scoped>
+  .success {
+    background-color: aquamarine;
+    color: blue;
+  }
+</style>

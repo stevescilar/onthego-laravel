@@ -8,4 +8,4 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 
 // resource route
-Route::resource('product', ProductController::class) -> only(['index','show']);
+Route::resource('product', ProductController::class);

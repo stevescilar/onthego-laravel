@@ -25,7 +25,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Product/Create');
+
     }
 
     /**
@@ -33,7 +34,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all()); 
+        Product::create(
+            $request->validate([
+                'item' => 'required',
+                'desc' => 'required',
+                'quantity' => 'required|integer|min:1',
+                'unitPrice' => 'required|integer|min:1',
+            ])
+        );
+        return redirect()->route('product.index')->with('success','Producted added successfully');
     }
 
     /**
@@ -52,24 +62,41 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Product $product)
     {
-        //
+        return inertia(
+            'Product/Edit',
+            [
+                'product' => $product
+            ]
+            );
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->update(
+            $request->validate([
+                'item' => 'required',
+                'desc' => 'required',
+                'quantity' => 'required|integer|min:1',
+                'unitPrice' => 'required|integer|min:1',
+            ])
+        );
+
+        return redirect()->route('product.index')->with('success', 'product was changed!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->back()
+            ->with('success','product was deleted');
     }
 }
