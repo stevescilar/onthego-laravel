@@ -38,6 +38,12 @@
   .success {
     @apply mb-4 border rounded-md shadow-sm border-green-200  dark:border-green-800 bg-green-50 dark:bg-green-900 p-2
   }
+  .btn-success {
+    @apply mt-3  border rounded-md shadow-sm outline-1 text-white border-green-500 dark:border-green-600 bg-green-500 dark:bg-green-600 p-0.5 
+  }
+  .btn-warning {
+    @apply mt-3  border rounded-md shadow-sm outline-1 text-white border-red-500 dark:border-red-600 bg-red-500 dark:bg-red-600 p-0.5 
+  }
 }
 
 /***

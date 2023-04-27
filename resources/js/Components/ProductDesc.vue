@@ -1,6 +1,6 @@
 <template>
   <span>
-    {{ product.item }} | {{ product.desc }} | {{ product.quantity }} |Costing {{ product.unitPrice }} 
+    {{ product.item }} | {{ product.desc }} | {{ product.quantity }} |
   </span>
 </template>
 
