@@ -1,41 +1,40 @@
 <template>
   <form @submit.prevent="update">
-    <div class="row">
-      <div class="col">
-        <label for="item">Item Name</label>
-        <input v-model="form.item" type="text" class="form-control" placeholder="Item" />
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-2">
+        <label for="item" class="label">Item Name</label>
+        <input v-model="form.item" type="text" class="input" placeholder="Item" />
         <div v-if="form.errors.item">
           {{ form.errors.item }}
         </div>
       </div>
-      <div class="col">
-        <label for="desc">Description</label>
+      <div class="col-2">
+        <label for="desc" class="label">Description</label>
   
-        <textarea v-model="form.desc" class="form-control" placeholder="description" />
+        <textarea v-model="form.desc" class="input" placeholder="description" />
         <div v-if="form.errors.desc">
           {{ form.errors.desc }}
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col">
-        <label for="quantity">Quantity</label>
-        <input v-model.number="form.quantity" type="number" class="form-control" placeholder="Quantity" />
+    <div class="grid grid-cols-6 gap-4">
+      <div class="col-2">
+        <label for="quantity" class="label">Quantity</label>
+        <input v-model.number="form.quantity" type="number" class="input" placeholder="Quantity" />
         <div v-if="form.errors.quantity">
           {{ form.errors.quantity }}
         </div>
       </div>
-      <div class="col">
-        <label for="unitPrice">Unit Price</label>
-  
-        <input v-model.number="form.unitPrice" type="text" class="form-control" placeholder="Price" />
+      <div class="col-2">
+        <label for="unitPrice" class="label">Unit Price</label>
+        <input v-model.number="form.unitPrice" type="text" class="input" placeholder="Price" />
         <div v-if="form.errors.unitPrice">
           {{ form.errors.unitPrice }}
         </div>
       </div>
     </div>
-    <div>
-      <button type="submit">Edit</button>
+    <div class="col-6 mb-2 mt-2">
+      <button type="submit" class="btn btn-primary">Edit</button>
     </div>
   </form>
 </template>

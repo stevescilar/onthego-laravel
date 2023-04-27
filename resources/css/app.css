@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .label {
+    @apply block mb-1 text-gray-500 dark:text-gray-300 font-medium
+  }
+
+  .input {
+    @apply block w-full p-2 rounded-md shadow-sm border border-gray-300 dark:border-gray-600 text-gray-500
+  }
+
+  .input-error {
+    @apply text-sm text-red-500 dark:text-red-400
+  }
+
+  .input-filter-l {
+    @apply placeholder:text-gray-400 dark:placeholder:text-gray-600 border border-gray-200 dark:border-gray-700 rounded-t-md rounded-l-md rounded-b-md rounded-r-none text-sm font-medium text-gray-600 dark:text-gray-400 dark:bg-gray-800
+  }
+
+  .input-filter-r {
+    @apply placeholder:text-gray-400 dark:placeholder:text-gray-600 border border-l-0 border-gray-200 dark:border-gray-700 rounded-t-md rounded-l-none rounded-b-none rounded-r-md text-sm font-medium text-gray-600 dark:text-gray-400 dark:bg-gray-800
+  }
+
+  .btn-normal {
+    @apply bg-gray-600 hover:bg-gray-500 text-white font-medium p-2 rounded-md
+  }
+
+  .btn-primary {
+    @apply bg-green-600 hover:bg-green-500 text-white font-medium p-2 rounded-md
+  }
+
+  .btn-outline {
+    @apply p-2 rounded-md border shadow-sm border-gray-300 dark:border-gray-800 hover:border-gray-400 hover:bg-gray-50 dark:hover:border-gray-700 dark:hover:bg-gray-800
+  }
+
+  .success {
+    @apply mb-4 border rounded-md shadow-sm border-green-200  dark:border-green-800 bg-green-50 dark:bg-green-900 p-2
+  }
+}
+
+/***
+
+/* Color Theme Swatches in Hex */
+/* .Technology-1-hex { color: #03275A; }
+.Technology-2-hex { color: #1A7DD7; }
+.Technology-3-hex { color: #F2B809; }
+.Technology-4-hex { color: #F37402; }
+.Technology-5-hex { color: #F34605; } */
+
+/* Color Theme Swatches in RGBA */
+/* .Technology-1-rgba { color: rgba(2, 38, 89, 1); }
+.Technology-2-rgba { color: rgba(26, 124, 214, 1); }
+.Technology-3-rgba { color: rgba(242, 184, 8, 1); }
+.Technology-4-rgba { color: rgba(242, 116, 2, 1); }
+.Technology-5-rgba { color: rgba(242, 70, 4, 1); } */
+
+/* Color Theme Swatches in HSLA */
+/* .Technology-1-hsla { color: hsla(0, 93, 18, 1); }
+.Technology-2-hsla { color: hsla(0, 78, 47, 1); }
+.Technology-3-hsla { color: hsla(0, 92, 49, 1); }
+.Technology-4-hsla { color: hsla(0, 98, 48, 1); }
+.Technology-5-hsla { color: hsla(0, 95, 48, 1); } */
+
+
+

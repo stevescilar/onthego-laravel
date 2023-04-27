@@ -1,41 +1,41 @@
 <template>
   <form @submit.prevent="create">
-    <div class="row">
-      <div class="col">
-        <label for="item">Item Name</label>
-        <input v-model="form.item" type="text" class="form-control" placeholder="Item" />
-        <div v-if="form.errors.item">
-          {{ form.errors.item }}
+    <div class="container">
+      <div class="grid grid-cols-6 gap-4">
+        <div class="col-span-4">
+          <label for="item" class="label">Item Name</label>
+          <input v-model="form.item" type="text" class="input" placeholder="Item Name" />
+          <div v-if="form.errors.item">
+            {{ form.errors.item }}
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <label for="desc">Description</label>
+        <div class="col-span-2">
+          <label for="desc" class="label">Description</label>
 
-        <textarea v-model="form.desc" class="form-control" placeholder="description" />
-        <div v-if="form.errors.desc">
-          {{ form.errors.desc }}
+          <textarea v-model="form.desc" class="input" placeholder="description" />
+          <div v-if="form.errors.desc">
+            {{ form.errors.desc }}
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <label for="quantity">Quantity</label>
-        <input v-model.number="form.quantity" type="number" class="form-control" placeholder="Quantity" />
-        <div v-if="form.errors.quantity">
-          {{ form.errors.quantity }}
+        <div class="col-span-4">
+          <label for="quantity" class="label">Quantity</label>
+          <input v-model.number="form.quantity" type="number" class="input" placeholder="Quantity" />
+          <div v-if="form.errors.quantity">
+            {{ form.errors.quantity }}
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <label for="unitPrice">Unit Price</label>
+        <div class="col-span-2">
+          <label for="unitPrice" class="label">Unit Price</label>
 
-        <input v-model.number="form.unitPrice" type="text" class="form-control" placeholder="Price" />
-        <div v-if="form.errors.unitPrice">
-          {{ form.errors.unitPrice }}
+          <input v-model.number="form.unitPrice" type="text" class="input" placeholder="Price" />
+          <div v-if="form.errors.unitPrice">
+            {{ form.errors.unitPrice }}
+          </div>
+        </div>
+        <div>
+          <button class="col-span-6 btn btn-primary" type="submit">Create</button>
         </div>
       </div>
-    </div>
-    <div>
-      <button type="submit">Create</button>
     </div>
   </form>
 </template>
