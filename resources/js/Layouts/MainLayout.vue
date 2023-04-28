@@ -19,10 +19,9 @@
 
   <main class="container max-auto p-4">
     <div v-if="flashSuccess" class="success">
-    {{ flashSuccess }}
-  </div>
-  <slot>Default</slot>
-
+      {{ flashSuccess }}
+    </div>
+    <slot>Default</slot>
   </main>
 </template>
 <script setup>
