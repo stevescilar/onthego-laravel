@@ -11,4 +11,12 @@ class Product extends Model
     protected $fillable = [
         'item','desc','quantity','unitPrice'
     ];
+    
+    public function owner(): BelongsTo {
+        return $this->belongsTo(
+            \App\Models\User::class,
+            'by_user_id'
+        );
+    }
 }
+

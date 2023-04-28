@@ -35,7 +35,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // dd($request->all()); 
-        Product::create(
+      $request->user()->products()->create(
             $request->validate([
                 'item' => 'required',
                 'desc' => 'required',

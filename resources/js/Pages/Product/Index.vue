@@ -29,8 +29,13 @@
           <td class="px-6 py-4"><Price :price="product.unitPrice" class="text-sm font-bold text-sky-700" /></td>
           <td class="px-6 py-4">NUll</td>
           <td class="px-6 py-4">
+            <span v-if="user">
             <Link :href="route('product.edit', {product: product.id})" class="btn btn-success">Edit</Link>  | 
             <Link :href="route('product.destroy', {product: product.id})" class="btn btn-warning" method="DELETE" as="button">Delete</Link>
+            </span>
+            <span v-else>
+              Login required
+            </span>
           </td>
 
 
@@ -61,8 +66,15 @@ import { Link } from '@inertiajs/vue3'
 // import ProductDesc from '@/Components/ProductDesc.vue'
 import Box from '@/Components/UI/Box.vue'
 import Price from '@/Components/Price.vue'
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
 
 defineProps({
   products: Array,
 })
+
+const user = computed(
+  () => usePage().props.user,
+)
+
 </script>
